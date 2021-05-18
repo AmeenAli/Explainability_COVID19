@@ -1,8 +1,11 @@
 # Explainability_COVID19
 Official Code Implementation of the paper : Explainability Guided Multi-Site Covid-19 CT Classification
-![alt text](https://github.com/AmeenAli/Explainability_COVID19/tree/main/images/1.jpg?raw=true)
-</vr>
-![alt text](https://github.com/AmeenAli/Explainability_COVID19/tree/main/images/2.jpg?raw=true)
+<p align="center">
+  <img  src="https://raw.githubusercontent.com/AmeenAli/Explainability_COVID19/main/images/1.png?token=ABU4KO77VHNAIZ6BNB5IYWLAVT2DC">
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/AmeenAli/Explainability_COVID19/main/images/2.png?token=ABU4KO7Z6EDS7XFREHHU4LLAVT2GY">
+</p>
 
 # Datasets :
 We employ three publicly available COVID-19 CT datasets:
