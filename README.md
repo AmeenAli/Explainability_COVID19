@@ -55,5 +55,5 @@ If you find this work useful please consider citing it:
   journal={arXiv preprint arXiv:2103.13677},
   year={2021}
 }
-}
+
 ```
