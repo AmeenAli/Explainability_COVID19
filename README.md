@@ -1,5 +1,8 @@
 # Explainability_COVID19
 Official Code Implementation of the paper : <b> Explainability Guided Multi-Site Covid-19 CT Classification </b>
+<br>
+https://arxiv.org/abs/2103.13677
+
 <p align="center">
   <img  src="https://raw.githubusercontent.com/AmeenAli/Explainability_COVID19/main/images/1.png?token=ABU4KO77VHNAIZ6BNB5IYWLAVT2DC">
 </p>
