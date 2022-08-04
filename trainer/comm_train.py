@@ -35,10 +35,10 @@ class local_pos_loss(nn.Module):
         bs = z.shape[0] # batchsize
         zSize = z.shape[1] # 2048
         nP = p.shape[2] # 4
-        z = z.contiguous().view(bs*zSize, z.shape[2], z.shape[3]).unsqueeze(dim=1) # [batchsize * 2048 , 1 , 7 , 7]
+        z = z.view(bs*zSize, z.shape[2], z.shape[3]).unsqueeze(dim=1) # [batchsize * 2048 , 1 , 7 , 7]
         p = p.repeat(1, zSize, 1, 1) # [batchsize , 2048 , 4 , 2]
-        p = p.contiguous().view(bs*zSize, p.shape[2], p.shape[3]).unsqueeze(dim=1) # [batchsize * 2048, 1, 4, 2]
-        c = F.grid_sample(z, p).squeeze().contiguous().view(bs, zSize, nP) # [batchsize , 2048 , 4]
+        p = p.view(bs*zSize, p.shape[2], p.shape[3]).unsqueeze(dim=1) # [batchsize * 2048, 1, 4, 2]
+        c = F.grid_sample(z, p).squeeze().view(bs, zSize, nP) # [batchsize , 2048 , 4]
         return c
 
     def forward(self, z, mask):
