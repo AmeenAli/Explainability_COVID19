@@ -18,7 +18,6 @@ class local_pos_loss(nn.Module):
     def __init__(self, conf):
         super(local_pos_loss, self).__init__()
         self.lsoftmax = nn.LogSoftmax(dim=1)
-        self.n = conf['n'] # n = 
 
     def get_triplets(self, mask, n1=2, n2=2):
         index = torch.topk(mask.reshape(mask.shape[0], -1), n1, dim=1)[1][..., None]
@@ -29,7 +28,7 @@ class local_pos_loss(nn.Module):
         a = index // 7
         b = index % 7
         min_values = torch.cat([a, b], dim=2)
-        return (max_values-3.5)/3.5, (min_values-3.5)/3.5
+        return max_values, min_values
 
     def latent_sample(self, z, p):
         bs = z.shape[0] # batchsize
@@ -42,7 +41,7 @@ class local_pos_loss(nn.Module):
         return c
 
     def forward(self, z, mask):
-        positives, negatives = self.get_triplets(mask, n1=2, n2=self.n)
+        positives, negatives = self.get_triplets(mask, n1=2, n2=2)
         
         # positives : [batchsize , 2 , 2] , negatives : [batchsize , 2 , 2]
         
