@@ -55,7 +55,6 @@ class local_pos_loss(nn.Module):
         
         loss_mat1 = -self.lsoftmax(score_mat[:, 0, 1:])[: , 0] #  element 0 is u_1 x u_1, we want u_1 x u_2
 
-        positives, negatives = self.get_triplets(mask, n1=self.n, n2=2)
         p = torch.cat([negatives, positives], dim=1)
         p = p.unsqueeze(1).float().cuda()
         a = self.latent_sample(z, p)
